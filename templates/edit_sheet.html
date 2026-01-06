@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Edit Google Sheet</h3>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form method="post">
+            <div class="mb-3">
+                <label>Sheet Name</label>
+                <input type="text" name="name" class="form-control" value="{{ sheet.name }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Sheet URL</label>
+                <input type="url" name="url" class="form-control" value="{{ sheet.url }}" required>
+            </div>
+
+            <button class="btn btn-primary">Update</button>
+            <a href="/sheets" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

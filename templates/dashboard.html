@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-header">
+    <h4 class="fw-semibold mb-0">Document Portal</h4>
+</div>
+
+<div class="row g-4">
+
+    <div class="col-md-6">
+        <a href="/pdfs" class="text-decoration-none text-dark">
+            <div class="card shadow-sm p-4 h-100">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="icon-box">
+                        <i class="bi bi-file-earmark-pdf-fill fs-3 text-danger"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-semibold mb-1">PDF Documents</h6>
+                        <small class="text-muted">Upload & manage PDFs</small>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-6">
+        <a href="/sheets" class="text-decoration-none text-dark">
+            <div class="card shadow-sm p-4 h-100">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="icon-box">
+                        <i class="bi bi-table fs-3 text-success"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-semibold mb-1">Google Sheets</h6>
+                        <small class="text-muted">Centralized sheet access</small>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}
