@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "username": "developer",
+      "password": "dev123",
+      "team": "Dev"
+    },
+    {
+      "username": "tester",
+      "password": "test123",
+      "team": "Testing"
+    },
+    {
+      "username": "ui",
+      "password": "ui123",
+      "team": "UI/UX"
+    },
+    {
+      "username": "backend",
+      "password": "backend123",
+      "team": "Backend"
+    },
+    {
+      "username": "Art",
+      "password": "Art123",
+      "team": "Art"
+    }
+  ]
+}

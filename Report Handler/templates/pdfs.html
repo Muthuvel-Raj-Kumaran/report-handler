@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-header">
+    <h4 class="fw-semibold mb-0">PDF Documents</h4>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data" class="row g-3 align-items-center">
+            <div class="col-md-9">
+                <input type="file" name="pdf" class="form-control" required>
+            </div>
+            <div class="col-md-3 text-end">
+                <button class="btn btn-danger w-100">
+                    <i class="bi bi-upload me-1"></i> Upload PDF
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card shadow">
+    <div class="card-body p-0">
+
+        <table class="table table-hover mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th class="ps-4">Document</th>
+                    <th>Uploaded At</th>
+                    <th class="text-end pe-4">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for pdf in pdfs %}
+                <tr>
+                    <td class="ps-4">
+                        <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                        {{ pdf.original_name }}
+                    </td>
+                    <td>
+                        <span class="badge bg-secondary">
+                            {{ pdf.uploaded_at }}
+                        </span>
+                    </td>
+                    <td class="text-end pe-4 action-btns">
+                        <a href="/pdfs/view/{{ pdf.filename }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <i class="bi bi-eye"></i>
+                        </a>
+                        <a href="/pdfs/delete/{{ pdf.id }}"
+                           class="btn btn-sm btn-outline-danger"
+                           onclick="return confirm('Delete this PDF?')">
+                           <i class="bi bi-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3" class="text-center text-muted py-4">
+                        No PDFs uploaded
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<a href="/" class="btn btn-link mt-3">
+    <i class="bi bi-arrow-left"></i> Back to Dashboard
+</a>
+
+{% endblock %}
